@@ -9,43 +9,43 @@ $(document).ready(function(){
     
     $( ".red-side" ).droppable({
         drop: function( event, ui ) {
-            //$( this )
-            //  .addClass( "highlight" );
             redcount = redcount+1;
             bluecount = bluecount-1;
             console.log("redcount: " + redcount);
-            $('.red-side').css('width', "+=1");
-            $('.blue-side').css('width', "-=1");
+            addredscore();
+            removebluescore();
             
             $('#point-red').html(redcount);
-        }//,
-        //out: function( event, ui ) {
-            //$( this )
-            //  .removeClass( "highlight" );
-            //   redcount = redcount-1;
-            //   console.log("redcount: " + redcount);
-        //}
+        }
     });
     
     $( ".blue-side" ).droppable({
         drop: function( event, ui ) {
-            //$( this )
-            //  .addClass( "highlight" );
             bluecount = bluecount+1;
             redcount = redcount-1;
             console.log("bluecount: " + bluecount);
-            $('.red-side').css('width', "-=1");
-            $('.blue-side').css('width', "+=1").css("left", "-=1");
+            addbluescore();
+            removeredscore();
             
             $('#point-blue').html(bluecount);
-        }//,
-        //out: function( event, ui ) {
-            //$( this )
-            //  .removeClass( "highlight" );
-            //   redcount = redcount-1;
-            //   console.log("redcount: " + redcount);
-        //}
+        }
     });
     
+    function addredscore(){
+            $('.red-side').css('width', "+=1");
+                   
+    };
     
+    function removeredscore(){
+            $('.red-side').css('width', "-=1");
+            
+    };
+    
+    function removebluescore(){
+            $('.blue-side').css('width', "-=1").css("left", "+=1");
+    };    
+    
+    function addbluescore(){
+            $('.blue-side').css('width', "+=1").css("left", "-=1");
+    };        
 });
