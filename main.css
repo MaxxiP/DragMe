@@ -1,0 +1,110 @@
+/************************************
+*
+*   Indigo          : #3f51b5
+*   Indigo (dark)   : #303f9f
+*   Light Blue      : #c5cae9
+*   White           : #fff
+*   Pink            : #ff4081
+*   Gray (dark)     : #212121
+*   Gray (medium)   : #727272
+*   Gray (light)    : #b6b6b6
+*
+************************************/
+
+
+/***********************************
+*           Base
+************************************/
+
+body{
+    color: #b9b9b9;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #4b4b4b;
+}
+
+h1, h2, h3, h4, h5, h5{
+    text-align: center;
+}
+
+ol, ul{
+}
+
+li{
+    
+}
+
+p{
+    
+}
+
+a{
+}
+
+a:hover,
+a:active,
+a:focus{
+}
+
+/***********************************
+*           Header
+***********************************/
+
+#circle-mid{
+    position:absolute;
+    left: 40%;
+    top: 40%;
+    width: 250px;
+    height: 250px;
+    border: 5px solid;
+    border-color: #a5a5a5;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.container{
+
+}
+
+.red-side{
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color: #ff6464;
+}
+
+.blue-side{
+    position: relative;
+    left: 80%;
+    width: 20%;
+    height: 100vh;
+    background-color: #64b2ff;
+}
+
+.circle-mid{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
