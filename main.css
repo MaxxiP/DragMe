@@ -29,10 +29,14 @@ h1, h2, h3, h4, h5, h5{
 }
 
 ol, ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
 }
 
 li{
-    
+    display: inline; 
 }
 
 p{
@@ -51,17 +55,49 @@ a:focus{
 *           Header
 ***********************************/
 
-#circle-mid{
+.circle-mid{
     position:absolute;
-    left: 40%;
-    top: 40%;
-    width: 250px;
-    height: 250px;
+    left: 45%;
+    top: 20%;
+    width: 150px;
+    height: 150px;
     border: 5px solid;
+    background-color: #dedede;
     border-color: #a5a5a5;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+    z-index: 99;
+}
+
+.circle-mid2{
+    position:absolute;
+    left: 45%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid;
+    background-color: #dedede;
+    border-color: #a5a5a5;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 98;
+}
+
+.circle-mid3{
+    position:absolute;
+    left: 45%;
+    top: 80%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid;
+    background-color: #dedede;
+    border-color: #a5a5a5;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 97;
 }
 
 .container{
@@ -83,17 +119,28 @@ a:focus{
     background-color: #64b2ff;
 }
 
-.circle-mid{
-    
+
+.highlight{
+    background-color: aqua;
 }
 
+.point-container{
+    position: absolute;
+    width: 100%;
+    top: 2%;
+    text-align: center;
+}
 
+.point-li{
+    font-size: 38px;
+}
 
-
-
-
-
-
+#auth{
+    position: absolute;
+    width: 100%;
+    bottom: 1%;
+    text-align: center;
+}
 
 
 
