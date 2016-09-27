@@ -2,6 +2,11 @@ $(document).ready(function(){
     var redcount = 0;
     var bluecount = 0;
     
+    var redpoints = 0;
+    var bluepoints = 0;
+    
+    var blueTimer;
+    
     $( ".draggable" ).draggable({
         containment: "window"
     });
@@ -9,29 +14,47 @@ $(document).ready(function(){
     
     $( ".red-side" ).droppable({
         drop: function( event, ui ) {
-            redcount = redcount+1;
-            bluecount = bluecount-1;
+
             console.log("redcount: " + redcount);
-            addredscore();
-            removebluescore();
-            
-            $('#point-red').html(redcount);
+
+            setInterval(function () {
+                addredscore();
+                removebluescore();
+                redpoints = redcount;
+                $('#point-red').html(redpoints);
+                console.log("redcount: " + redcount);
+            }, 1000);
+        },
+        out: function(event, ui){
+            --redcount;
         }
     });
     
+    
     $( ".blue-side" ).droppable({
         drop: function( event, ui ) {
-            bluecount = bluecount+1;
-            redcount = redcount-1;
-            console.log("bluecount: " + bluecount);
-            addbluescore();
-            removeredscore();
-            
-            $('#point-blue').html(bluecount);
+        
+        blueTimer = setInterval(function () {
+                addbluescore();
+                removeredscore();
+                bluepoints = bluecount;
+                $('#point-blue').html(bluepoints);
+                console.log("bluecount: " + bluecount);
+            },1000);
+        },
+        out: function(event, ui){
+            try{
+                clearInterval(blueTimer[i]);
+                console.log("bluecount interval stopped");
+            }catch(err){
+                console.log("bluecount failed to stop + " +  err);
+        }
         }
     });
     
     function addredscore(){
+            ++redcount;
+            --bluecount;
             $('.red-side').css('width', "+=1");
                    
     };
@@ -46,6 +69,8 @@ $(document).ready(function(){
     };    
     
     function addbluescore(){
+            ++bluecount;
+            --redcount;
             $('.blue-side').css('width', "+=1").css("left", "-=1");
     };        
 });
